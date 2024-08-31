@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'popins', sans-serif;
+    
+                                         /* This is for the body  */
+}
+body{
+    background: #222;
+   
+}
+
+.card{
+    background: linear-gradient(135deg,#00feba,#5b548a);              
+      /*This is the main div of the card  */
+    width: 90%;
+    max-width: 400px;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px 35px;
+    color: #fff;
+    text-align: center;
+}
+.search_bar{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    
+}
+.search_bar input{
+    /* This section is for the search bar content  */
+    border: 0;
+    outline:0;
+    border-radius: 30px;
+    padding: 10px 25px;
+    flex: 1;
+    height: 40px;
+    margin-right: 16px;
+    font-size: 18px;
+    background: #ebfffc;
+    color: #555;
+}
+
+.search_bar button{
+    /* This is for the search lens padding and positions */
+    width: 50px;
+    height: 50px;
+    border: 0;
+    outline:0;
+    border-radius: 50%;
+    background: #ebfffc;
+    cursor: pointer;
+}
+.imgoflens{
+    width: 16px;
+   /* This is the lens inside css */
+
+}
+.weather_icon{
+    width: 180px;
+    height: 180px;
+}
+.temp{
+    font-size: 50px;
+    font-weight: bolder;
+
+}
+.city{
+    font-size: 35px;
+    padding: 20px ;
+    line-height: 19px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+}
+.column_1{
+    display: flex;
+    align-items: center;
+    text-align: left;
+
+}
+.column_1 img{
+    width:60px;
+     
+}
+.hum_wind{
+    font-size: 14px;
+    margin-left: 10px;
+}
+.humidity,.wind{
+    font-size: 15px;
+    margin-left: 10px;
+}
+
