@@ -4,30 +4,79 @@
     box-sizing: border-box;
     font-family: 'popins', sans-serif;
     
+    
+    
                                          /* This is for the body  */
 }
-body{
-    background: #222;
+.heading{
+margin-left:100px ;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-weight: bold;
+cursor: pointer;
+
+}
+.heading:hover{
+    color: rgb(79, 117, 187);
+}
+.heading img{
+    width: 255px;
+    height: 79px;
+   margin-top: 5px;
+   padding: 10px;
+}
+#head{
+ display: flex;
+ justify-content: space-between;
+ width: 100%;
+ height: 52px;
+ background-color: rgb(143, 177, 141);
+ color: #fff;
+ align-items: center;
+
+}
+nav ul li{
+   margin-right: 100px;
+   padding: 10px;
+   list-style: none;
    
 }
+nav ul li a {
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: bold;
+  
+}
+nav a:hover{
+    color: rgb(79, 117, 187);
+
+}
+
+
+
 
 .card{
-    background: linear-gradient(135deg,#319fda,#5b548a);              
+    background: linear-gradient(140deg,  rgb(100, 173, 96) , rgb(63, 98, 174));              
       /*This is the main div of the card  */
     width: 90%;
     max-width: 400px;
     margin: 100px auto 0;
-    border-radius: 20px;
+    border-radius: 50px;
     padding: 40px 35px;
     color: #fff;
     text-align: center;
+    position: relative;
+    
+   
 }
 .search_bar{
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    color: white;
+    
+    
    
     
 }
@@ -41,7 +90,7 @@ body{
     height: 40px;
     margin-right: 16px;
     font-size: 14px;
-    color: #ffff;
+    
 }
 
 .search_bar button{
@@ -100,4 +149,39 @@ body{
     font-size: 15px;
     margin-left: 10px;
 }
+/* .background{
+    width: 100%; */
+    /* background-position: center;
+    background-size: cover;
+    background-image: url(images/background.jpg);
+    height: fit-content;
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    filter: blur(3px);
+    background-repeat: no-repeat;
+    overflow: hidden; */
 
+.background {
+        position: relative;
+        width: 100%;
+        height: fit-content;
+        min-height: 100vh;
+        overflow: hidden; /* Ensure content does not overflow */
+    }
+
+.background::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    filter: blur(10px);
+    z-index: -1; /* Place the pseudo-element behind the content */
+}
