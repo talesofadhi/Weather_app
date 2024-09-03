@@ -11,8 +11,11 @@ const weatherimg = document.querySelector(".weather_icon");
 //Then we use async function and add fuction to it.
 async function checkweather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
-    // And add variable and fetch the api url and api key
-    var data = await response.json(); // converts the weather details to json format.
+    if (response.status==404){
+        document.querySelector(".error").style.display="block"
+        document.querySelector(".weather").style.display="none"
+    }else{
+        var data = await response.json(); // converts the weather details to json format.
     console.log(data);
     // now we are going to fetch the weather details and give it to the weather app.
     document.querySelector(".city").innerHTML=data.name;
@@ -34,9 +37,14 @@ async function checkweather(city){
 
      } else if( data.weather[0].main=="Drizzle"){
         weatherimg.src="images/drizzle.png";  
-
+        
      }
+     document.querySelector(".weather").style.display="block";
  
+
+    }
+
+    
 }
 
 searchbtn.addEventListener("click", ()=> {
