@@ -4,11 +4,12 @@ const apiUrl = "https://api.openweathermap.org/data/2.5/weather?units=metric&q="
        
 const searchbox = document.querySelector(".search_bar input");
 const searchbtn = document.querySelector(".search_bar button");
+const weatherimg = document.querySelector(".weather_icon");
 
 
 
 //Then we use async function and add fuction to it.
-async function checkweather(city){  
+async function checkweather(city){
     const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
     // And add variable and fetch the api url and api key
     var data = await response.json(); // converts the weather details to json format.
@@ -18,18 +19,36 @@ async function checkweather(city){
     document.querySelector(".temp").innerHTML=Math.round(data.main.temp)+ "°C";
     document.querySelector(".humidity").innerHTML=data.main.humidity + "%";
     document.querySelector(".wind").innerHTML=data.wind.speed + "Km/h";
+
+    if(data.weather[0].main=="Clouds"){
+        weatherimg.src="images/clouds.png";
+
+    }else if(data.weather[0].main=="Clear"){
+        weatherimg.src="images/clear.png";
+
+    }else if(data.weather[0].main=="Rain"){
+        weatherimg.src="images/rain.png";
+
+     } else if(data.weather[0].main=="Mist"){
+            weatherimg.src="images/mist.png";
+
+     } else if( data.weather[0].main=="Drizzle"){
+        weatherimg.src="images/drizzle.png";  
+
+     }
  
 }
+
 searchbtn.addEventListener("click", ()=> {
     checkweather(searchbox.value);
     
 
 })
 
+searchbox.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        event.preventDefault(); // Prevent the default action of the Enter key
+       checkweather(searchbox.value);
 
-
-
-
-
-
-
+    }
+})
